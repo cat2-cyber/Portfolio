@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/swiper/8.0.7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .tools {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .swiper-container {
+            width: 100%;
+            max-width: 900px; /* Set a max width for the slider */
+            margin: auto; /* Center the slider */
+        }
+
+        .swiper-slide {
+            margin: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            background-color: white; /* Background color for the slide */
+        }
+
+        .swiper-slide:hover {
+            transform: scale(1.05);
+        }
+
+        .img-fluid {
+            width: 100%; /* Make images responsive */
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+            border-radius: 10px; /* Rounded corners for images */
+        }
+
+        /* Optional: Add some styling for the lightbox */
+        .glightbox {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="tools swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/recent-photos/recent-photos-1.jpg"><img src="images/11.png" class="img-fluid" alt=""></a></div>
+        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/recent-photos/recent-photos-2.jpg"><img src="images/12.png" class="img-fluid" alt=""></a></div>
+        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/recent-photos/recent-photos-3.jpg"><img src="images/13.png" class="img-fluid" alt=""></a></div>
+        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/recent-photos/recent-photos-4.jpg"><img src="images/14.png" class="img-fluid" alt=""></a></div>
+        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/recent-photos/recent-photos-5.jpg"><img src="images/15.png" class="img-fluid" alt=""></a></div>
+        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="assets/img/recent-photos/recent-photos-6.jpg"><img src="images/16.png" class="img-fluid" alt=""></a></div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/swiper/8.0.7/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/glightbox.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween: 10,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
+    });
+
+    const lightbox = GLightbox({
+        selector: '.glightbox'
+    });
+</ script>
+
+</body>
+</html>
